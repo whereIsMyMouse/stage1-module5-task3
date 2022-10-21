@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 public class CollectionService {
 
     public List<Integer> filterEvenNumbers(List<Integer> list) {
-        return list.stream().filter(x -> x % 2 == 0).collect(Collectors.toList());
+        return list.stream()
+                .filter(x -> x % 2 == 0)
+                .collect(Collectors.toList());
     }
 
     public List<String> toUpperCaseCollection(List<String> list) {
@@ -17,7 +19,8 @@ public class CollectionService {
     }
 
     public Optional<Integer> findMax(List<Integer> list) {
-        return list.stream().max((numFirst, numSecond) -> numFirst.compareTo(numSecond));
+        return list.stream()
+                .max((numFirst, numSecond) -> numFirst.compareTo(numSecond));
     }
 
     public Optional<Integer> findMin(List<List<Integer>> list) {
@@ -27,6 +30,7 @@ public class CollectionService {
     }
 
     public Integer sum(List<Integer> list) {
-        return list.stream().reduce(0, (acc, num) -> (acc + num));
+        return list.stream()
+                .reduce(0, (acc, num) -> (acc + num));
     }
 }
